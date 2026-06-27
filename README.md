@@ -1,71 +1,179 @@
-# Daily LeetCode Solutions
+# 🚀 LeetCode Solutions Website
 
-A read-only public LeetCode solution archive with a private admin dashboard.
+A modern web application that serves as a centralized archive of my daily LeetCode solutions. Every solution is carefully documented with the original problem statement, algorithm, and optimized implementations in multiple programming languages.
 
-## Run locally
+## ✨ Features
 
-```powershell
-npm start
+- 📅 Daily LeetCode solution uploads
+- 🔍 Search solutions by LeetCode problem number
+- 📖 Automatically fetches problem details from LeetCode
+- 📝 Dedicated algorithm/approach section for every problem
+- 💻 Solutions available in:
+  - C++
+  - Python
+  - Java
+- 📚 Permanent archive of all uploaded solutions
+- ⚡ Fast and responsive user interface
+- 🌙 Modern dark theme
+- 📱 Fully responsive design
+
+---
+
+## 🖥️ Website Layout
+
+```
+---------------------------------------------------------------
+| Logo + Title                     Search by Question Number   |
+---------------------------------------------------------------
+|                     |                                        |
+|     Question        |                                        |
+|     (Scrollable)    |                                        |
+|---------------------|        Solution Code                   |
+|                     |   (C++ | Python | Java Tabs)           |
+|     Algorithm       |                                        |
+|   (Scrollable)      |                                        |
+|                     |                                        |
+---------------------------------------------------------------
 ```
 
-Open:
+### Left Panel
+- Problem statement imported from LeetCode
+- Independent scrolling
+- Constraints
+- Examples
+- Notes
 
-- Public site: `http://localhost:3000`
-- Admin: `http://localhost:3000/admin`
+### Bottom Left
+- Algorithm
+- Intuition
+- Time Complexity
+- Space Complexity
+- Dry Run (optional)
 
-Default admin password:
+### Right Panel
+- Language Tabs
+  - C++
+  - Python
+  - Java
+- Syntax highlighted code
+- Copy Code button
 
-```text
-Lc$9vQ2!mR7#zT4@pX8&wN6
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- React.js
+- Tailwind CSS
+- Axios
+
+### Backend
+- Node.js
+- Express.js
+
+### Database
+- MongoDB
+
+### Other
+- LeetCode API / GraphQL
+- Prism.js / Highlight.js
+- REST APIs
+
+---
+
+## 📂 Project Structure
+
+```
+leetcode-solutions-website/
+│
+├── client/
+│   ├── components/
+│   ├── pages/
+│   ├── assets/
+│   └── App.jsx
+│
+├── server/
+│   ├── controllers/
+│   ├── routes/
+│   ├── models/
+│   ├── middleware/
+│   └── server.js
+│
+├── database/
+│
+├── README.md
+└── package.json
 ```
 
-For real use, set a stronger password before starting:
+---
 
-```powershell
-$env:ADMIN_PASSWORD="your-strong-password"
-npm start
+## 🚀 Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/Sujith-2193/Leetcode-solutions-website.git
 ```
 
-## What it includes
+Go to the project directory
 
-- Public visitors can only view posted solutions.
-- Admin can import LeetCode questions by number.
-- Admin can post approach notes and C++, Python, and Java solutions.
-- Local testing stores posts in `data/store.json`.
-- Production can use Firebase Firestore so posts are stored online, not on your laptop.
-- Analytics include total views, views per day, and views for each question.
+```bash
+cd Leetcode-solutions-website
+```
 
-## Production database
+Install dependencies
 
-Use Firebase Firestore for the deployed site. Firebase has the largest free database storage among the options we compared: 1 GiB on the Spark plan.
-
-Install dependencies once:
-
-```powershell
+```bash
 npm install
 ```
 
-Then start with Firebase enabled:
+Start the development server
 
-```powershell
-$env:DATABASE_PROVIDER="firebase"
-$env:ADMIN_PASSWORD="your-strong-password"
-$env:SESSION_SECRET="a-long-random-secret"
-$env:FIREBASE_SERVICE_ACCOUNT_PATH="C:\path\to\firebase-service-account.json"
-npm start
+```bash
+npm run dev
 ```
 
-On hosting platforms, store the service account as a base64 environment variable instead:
+---
 
-```powershell
-$env:FIREBASE_SERVICE_ACCOUNT_BASE64="base64-version-of-service-account-json"
-```
+## 🎯 Upcoming Features
 
-Firestore collections used:
+- User authentication for admin
+- Admin dashboard for uploading solutions
+- Tags and topic filtering
+- Difficulty filters
+- Company-wise questions
+- Bookmark questions
+- Dark/Light mode
+- Keyboard shortcuts
+- Code download
+- Recently added solutions
+- Search by title
+- Search suggestions
+- Daily streak counter
+- Animated UI
+- Comments section
+- Discussion forum
 
-- `solutions`
-- `views`
+---
 
-## Notes
+## 📸 Preview
 
-The LeetCode importer uses LeetCode's public GraphQL endpoint from the server. If LeetCode changes or blocks that endpoint, manual editing still works from the admin form.
+The interface is designed with a split-screen layout:
+
+- Left panel for the LeetCode problem and algorithm explanation.
+- Right panel for syntax-highlighted solutions in C++, Python, and Java.
+- Search bar at the top for quickly navigating to a problem by its number.
+
+---
+
+## 👨‍💻 Author
+
+**Arun Sujith**
+
+- GitHub: https://github.com/Sujith-2193
+
+---
+
+## ⭐ Support
+
+If you find this project useful, consider giving it a ⭐ on GitHub.
