@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin - Daily LeetCode Solutions</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <section class="login" id="loginView">
+      <form class="login-box form-grid" id="loginForm">
+        <div class="brand">
+          <div class="mark">&lt;/&gt;</div>
+          <div>
+            <h1>Admin Login</h1>
+            <p>Post solutions and view analytics.</p>
+          </div>
+        </div>
+        <div class="field">
+          <label for="password">Admin Password</label>
+          <input id="password" type="password" autocomplete="current-password" placeholder="Enter password">
+        </div>
+        <button class="btn" type="submit">Login</button>
+        <div class="status" id="loginError"></div>
+      </form>
+    </section>
+
+    <section id="adminView" class="hidden">
+      <header class="topbar">
+        <div class="brand">
+          <div class="mark">&lt;/&gt;</div>
+          <div>
+            <h1>Admin Dashboard</h1>
+            <p>Import, post, and measure every solution.</p>
+          </div>
+        </div>
+        <div class="search">
+          <a class="btn secondary" href="/">Public Site</a>
+          <button class="btn ghost" id="logoutBtn">Logout</button>
+        </div>
+      </header>
+
+      <main class="admin-layout">
+        <aside class="admin-panel">
+          <h2>Analytics</h2>
+          <div class="stats">
+            <div class="stat"><span class="muted">Total Views</span><strong id="totalViews">0</strong></div>
+            <div class="stat"><span class="muted">Today</span><strong id="todayViews">0</strong></div>
+            <div class="stat"><span class="muted">Solutions</span><strong id="totalSolutions">0</strong></div>
+          </div>
+          <button class="btn secondary" id="refreshAnalytics">Refresh</button>
+
+          <h3 style="margin-top: 22px;">Views Per Day</h3>
+          <table class="table">
+            <thead><tr><th>Day</th><th>Views</th></tr></thead>
+            <tbody id="dayRows"></tbody>
+          </table>
+
+          <h3 style="margin-top: 22px;">Views By Question</h3>
+          <table class="table">
+            <thead><tr><th>Question</th><th>Views</th></tr></thead>
+            <tbody id="questionRows"></tbody>
+          </table>
+
+          <h3 style="margin-top: 22px;">Posted Solutions</h3>
+          <table class="table">
+            <thead><tr><th>No.</th><th>Title</th><th>Date</th><th></th></tr></thead>
+            <tbody id="existingRows"></tbody>
+          </table>
+        </aside>
+
+        <section class="admin-panel">
+          <h2>Post Solution</h2>
+          <form class="form-grid" id="solutionForm">
+            <div class="two">
+              <div class="field">
+                <label for="questionNumber">LeetCode Number</label>
+                <input id="questionNumber" type="number" min="1" placeholder="146" required>
+              </div>
+              <div class="field">
+                <label>&nbsp;</label>
+                <button class="btn secondary" type="button" id="importBtn">Import From LeetCode</button>
+              </div>
+            </div>
+
+            <div class="two">
+              <div class="field">
+                <label for="title">Question Title</label>
+                <input id="title" required>
+              </div>
+              <div class="field">
+                <label for="slug">LeetCode Slug</label>
+                <input id="slug" placeholder="lru-cache">
+              </div>
+            </div>
+
+            <div class="two">
+              <div class="field">
+                <label for="difficulty">Difficulty</label>
+                <select id="difficulty">
+                  <option>Easy</option>
+                  <option selected>Medium</option>
+                  <option>Hard</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="date">Publish Date</label>
+                <input id="date" type="date">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="tagsInput">Tags</label>
+              <input id="tagsInput" placeholder="Design, Hash Table, Linked List">
+            </div>
+
+            <div class="field">
+              <label for="content">Imported Question HTML</label>
+              <textarea id="content" placeholder="Click import to fetch the question statement."></textarea>
+            </div>
+
+            <div class="field">
+              <label for="approachInput">Algorithm / Approach</label>
+              <textarea id="approachInput" placeholder="Explain your intuition and steps here."></textarea>
+            </div>
+
+            <div class="field">
+              <label for="complexity">Complexity</label>
+              <textarea id="complexity" placeholder="Time: O(...), Space: O(...)"></textarea>
+            </div>
+
+            <div class="field">
+              <label for="cppCode">C++ Solution</label>
+              <textarea id="cppCode" class="codeblock" placeholder="Paste C++ code"></textarea>
+            </div>
+            <div class="field">
+              <label for="pythonCode">Python Solution</label>
+              <textarea id="pythonCode" class="codeblock" placeholder="Paste Python code"></textarea>
+            </div>
+            <div class="field">
+              <label for="javaCode">Java Solution</label>
+              <textarea id="javaCode" class="codeblock" placeholder="Paste Java code"></textarea>
+            </div>
+
+            <button class="btn" type="submit">Save Solution</button>
+            <div class="status" id="status"></div>
+          </form>
+        </section>
+      </main>
+    </section>
+    <script src="/admin.js"></script>
+  </body>
+</html>

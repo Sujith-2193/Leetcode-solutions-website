@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Daily LeetCode Solutions</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <div class="mark">&lt;/&gt;</div>
+        <div>
+          <h1>Daily LeetCode Solutions</h1>
+          <p>One Problem. One Solution. Every Day.</p>
+        </div>
+      </div>
+      <div class="search">
+        <div class="field">
+          <label for="questionSearch">Enter LeetCode Question Number</label>
+          <input id="questionSearch" inputmode="numeric" placeholder="e.g. 146">
+        </div>
+        <button class="btn" id="searchBtn">View Solution</button>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="stack">
+        <article class="panel">
+          <div class="panel-head">
+            <div class="panel-title">Question</div>
+            <a class="leet-link" id="leetLink" href="https://leetcode.com/problemset/" target="_blank" rel="noreferrer">From LeetCode</a>
+          </div>
+          <div class="scroll">
+            <div class="question-title" id="questionTitle"></div>
+            <div class="pill-row" id="tags"></div>
+            <div id="question"></div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <div class="panel-title">Algorithm / Approach</div>
+          </div>
+          <div class="scroll" id="approach"></div>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div class="panel-title">Solution</div>
+        </div>
+        <div class="codebar">
+          <div class="tabs" role="tablist">
+            <button class="tab active" data-lang="cpp">C++</button>
+            <button class="tab" data-lang="python">Python</button>
+            <button class="tab" data-lang="java">Java</button>
+          </div>
+          <button class="btn secondary" id="copyCode">Copy Code</button>
+        </div>
+        <div class="code-wrap">
+          <pre class="codeblock" id="code"></pre>
+        </div>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>
